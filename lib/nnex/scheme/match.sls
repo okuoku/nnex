@@ -1,6 +1,6 @@
 (library (nnex scheme match)
          (export match)
-         (import (scheme base))
+         (import (except (scheme base) _))
          
 (define-syntax match
   (syntax-rules ()
