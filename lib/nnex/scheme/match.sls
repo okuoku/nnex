@@ -1,4 +1,7 @@
-
+(library (nnex scheme match)
+         (export match)
+         (import (scheme base))
+         
 (define-syntax match
   (syntax-rules ()
     ((match expr (pat . body) ...)
@@ -144,3 +147,4 @@
     ((_ ((pat expr) . rest) . body)
      (match expr (pat (match-let* rest . body))))))
 
+)
