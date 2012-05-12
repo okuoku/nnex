@@ -1,5 +1,5 @@
 ;; From nmosh
-(library (nnex library file)
+(library (nnex library path)
          (export library-name->filename)
          (import (nnex scheme)
                  (nnex os)
