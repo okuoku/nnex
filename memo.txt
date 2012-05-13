@@ -1,0 +1,25 @@
+(nnex synrules runtime) ;; opaque from users
+
+(nnex synrules) library:
+    _ ;; AUX
+    ... ;; AUX
+    syntax-rules
+
+(nnex core) library:
+    define-syntax
+    core-form ;; (core-form KEYWORD form ...)
+    core-define ;; (core-define SYM form)
+    core-quote
+    core-extend
+    core-body ;; lambda body
+    core-invalid-form ;; (core-invalid-form debug ...)
+    
+
+We don't have "core-extend-syntax" because we translate letrec-syntax into
+define-syntax.
+
+"core-extend" is just a speed hack. Although i generally don't want to include
+any speed hack into core language, but we need it to support "let" syntax 
+natively with "core-form"..
+
+
